@@ -7,7 +7,11 @@
   padding: 0.3rem 0.5rem;
   border-radius: 0.4rem;
   z-index: var(--z-tooltip);
-  transition: .4s;
+  transition: 0.4s;
+}
+
+#dark .scrollup {
+  background-color: var(--dark-green);
 }
 
 .scrollup__icon {
@@ -15,7 +19,11 @@
   color: var(--container-color);
 }
 
-.scrollup:hover{
+#dark .scrollup__icon {
+  color: var(--title-color-dark);
+}
+
+.scrollup:hover {
   background-color: var(--title-color-dark);
 }
 
@@ -23,7 +31,6 @@
 .show-scroll {
   bottom: 3rem;
 }
-
 
 /* ===================== Breakpoints ================= */
 /* For large devices */
@@ -33,7 +40,7 @@
     padding: 0.25rem 0.4rem;
   }
 
-  .scrollup__icon{
+  .scrollup__icon {
     font-size: 1.25rem;
   }
 }
@@ -46,7 +53,7 @@
 
 /* For small devices */
 @media screen and (max-width: 350px) {
-  .scrollup{
+  .scrollup {
     right: 1rem;
   }
 }

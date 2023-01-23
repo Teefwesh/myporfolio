@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "./about.css";
 
 const Info = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="about__info grid">
-      <div className="about__box">
+      <div className="about__box" data-aos="flip-left" data-aos-duration="1500">
         <i className="bx bx-award about__icon"></i>
 
         <h3 className="about__title">Experience</h3>
@@ -19,7 +25,11 @@ const Info = () => {
         <span className="about__subtitle">10+ Projects</span>
       </div>
 
-      <div className="about__box">
+      <div
+        className="about__box"
+        data-aos="flip-right"
+        data-aos-duration="1500"
+      >
         <i className="bx bx-support about__icon"></i>
 
         <h3 className="about__title">Support</h3>

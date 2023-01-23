@@ -1,3 +1,5 @@
+import { createContext, useState } from "react";
+
 import "./App.css";
 import About from "./components/About/About";
 import Contact from "./components/contact/Contact";
@@ -7,22 +9,31 @@ import Home from "./components/Home/Home";
 import Scrollup from "./components/Scrollup/Scrollup";
 import Skills from "./components/Skills/Skills";
 
+export const ThemeContext = createContext(null);
+
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+
   return (
-    <>
-      <Header />
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="App" id={theme}>
+        <Header theme={theme} toggleTheme={toggleTheme} />
 
-      <main className="main">
-        <Home />
-        <About />
-        <Skills />
-        <Contact />
-        
-      </main>
+        <main className="main">
+          <Home theme={theme} />
+          <About theme={theme} />
+          <Skills />
+          <Contact />
+        </main>
 
-      <Footer />
-      <Scrollup />
-    </>
+        <Footer />
+        <Scrollup />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

@@ -1,5 +1,9 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "./contact.css";
 
@@ -9,15 +13,37 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_x9whtpd",
-      "template_gjzuujl",
-      form.current,
-      "PGAt8xmSsqC5sAAyZ"
+    emailjs
+      .sendForm(
+        "service_x9whtpd",
+        "template_gjzuujl",
+        form.current,
+        "PGAt8xmSsqC5sAAyZ"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    const resolveAfter3Sec = new Promise((resolve) =>
+      setTimeout(resolve, 1000)
     );
+    toast.promise(resolveAfter3Sec, {
+      pending: "Processing",
+      success: "Message Sent Successfully",
+      error: "Message rejected",
+    });
 
     e.target.reset();
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <section className="contact section" id="contact">
@@ -29,7 +55,12 @@ const Contact = () => {
           <h3 className="contact__title">Talk to me</h3>
 
           <div className="contact__info">
-            <div className="contact__card">
+            <div
+              className="contact__card"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1500"
+            >
               <i className="bx bx-mail-send contact__card-icon"></i>
 
               <h3 className="contact__card-title">Email</h3>
@@ -45,7 +76,11 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="contact__card">
+            <div
+              className="contact__card"
+              data-aos="zoom-in-left"
+              data-aos-duration="1500"
+            >
               <i className="bx bxl-whatsapp contact__card-icon"></i>
 
               <h3 className="contact__card-title">Whatsapp</h3>
@@ -64,7 +99,11 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="contact__card">
+            <div
+              className="contact__card"
+              data-aos="zoom-in-right"
+              data-aos-duration="1500"
+            >
               <i className="bx bxl-messenger contact__card-icon"></i>
 
               <h3 className="contact__card-title">Messenger</h3>
@@ -93,7 +132,8 @@ const Contact = () => {
                 type="text"
                 name="name"
                 className="contact__form-input"
-                placeholder="Insert your name"
+                placeholder="Name"
+                required
               />
             </div>
 
@@ -103,7 +143,8 @@ const Contact = () => {
                 type="email"
                 name="email"
                 className="contact__form-input"
-                placeholder="Insert your email"
+                placeholder="Email Address"
+                required
               />
             </div>
 
@@ -115,6 +156,7 @@ const Contact = () => {
                 rows="10"
                 className="contact__form-input"
                 placeholder="Write your project"
+                required
               ></textarea>
             </div>
 
@@ -122,6 +164,19 @@ const Contact = () => {
           </form>
         </div>
       </div>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={Slide}
+      />
     </section>
   );
 };

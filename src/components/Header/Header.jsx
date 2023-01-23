@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+
 import "./header.css";
 
-const Header = () => {
+const Header = ({ theme, toggleTheme }) => {
   window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
 
@@ -88,6 +89,21 @@ const Header = () => {
             className="uil uil-times nav__close"
             onClick={() => setToggle(!toggle)}
           ></i>
+        </div>
+
+        {/* MODES */}
+        <div className="Modes">
+          <span onClick={toggleTheme}>
+            {theme === "light" ? (
+              <span>
+                <i className="uil uil-moon"></i>
+              </span>
+            ) : (
+              <span>
+                <i className="uil uil-sun"></i>
+              </span>
+            )}
+          </span>
         </div>
 
         <div className="nav__toggle" onClick={() => setToggle(!toggle)}>

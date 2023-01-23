@@ -19,11 +19,18 @@
 }
 
 .contact__card {
-  background-color: var(--container-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border-radius: 0.75rem;
   text-align: center;
+}
+
+#dark .contact__card {
+  background-color: var(--dark-green);
+}
+
+#light .contact__card {
+  background-color: var(--container-color);
 }
 
 .contact__card-icon {
@@ -34,7 +41,7 @@
 
 .contact__card-title,
 .contact__card-data {
-  font-size: var(--small-font-size);
+  font-size: var(--normal-font-size);
 }
 
 .contact__card-title {
@@ -46,6 +53,11 @@
   margin-bottom: var(--mb-0-75);
 }
 
+#dark .contact__card-data {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
 .contact__button {
   color: var(--text-color);
   font-size: var(--small-font-size);
@@ -53,6 +65,14 @@
   align-items: center;
   justify-content: center;
   column-gap: 0.25rem;
+}
+
+#dark .contact__button {
+  color: var(--title-color);
+}
+
+#light .contact__button {
+  color: var(--text-color);
 }
 
 .contact__button-icon {
@@ -84,13 +104,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid rgba(0, 0, 0, 0.3);
   background: none;
-  color: var(--text-color);
   outline: none;
   border-radius: 0.75rem;
   padding: 1.5rem;
   z-index: 1;
+}
+
+#dark .contact__form-input {
+  border: 2px solid #3dff00;
+  color: var(--dark-title-color);
+}
+
+#light .contact__form-input {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  color: var(--text-color);
 }
 
 .contact__form-tag {
@@ -101,6 +129,11 @@
   padding: 0.25rem;
   background-color: var(--body-color);
   z-index: 10;
+}
+
+#dark .contact__form-tag {
+  background-color: var(--title-color-dark);
+  color: var(--dark-title-color);
 }
 
 .contact__form-area {

@@ -14,6 +14,14 @@
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
 
+  /* ============== Dark Mode Colors ============== */
+
+  --dark-body-color: hsl(var(--hue), var(--sat), 0%);
+  --dark-title-color: #fff;
+  --dark-text-color: #bbb;
+  --dark-green: #3dff00;
+  --dark-green-light: #3bcf0f;
+
   /* =========== Font and Topography ============ */
   --body-font: "Poppins", san-sarif;
 
@@ -81,16 +89,18 @@ textarea {
   font-size: var(--normal-font-size);
 }
 
-body {
+/* body {
   background-color: var(--body-color);
   color: var(--text-color);
-}
+} */
 
-h1,
-h2,
 h3 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
+}
+
+#dark h3 {
+  color: var(--title-color-dark);
 }
 
 ul {
@@ -112,15 +122,110 @@ img {
   height: auto;
 }
 
+/* ===================== DARK MODE ==================== */
+#dark {
+  background-color: var(--dark-body-color);
+  color: var(--dark-text-color);
+}
+
+#dark .header {
+  background-color: var(--dark-body-color);
+}
+
+#dark h1,
+#dark h2 {
+  color: var(--dark-title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+#dark .section__title {
+  font-size: var(--h1-font-size);
+  color: var(--dark-text-color);
+}
+
+#dark .home__social-icon {
+  color: var(--dark-text-color);
+}
+
+#dark .home__social-icon:hover {
+  color: var(--dark-green);
+}
+
+#dark .nav_link {
+  color: var(--dark-title-color);
+}
+
+#dark .active-link,
+#dark .nav_link:hover {
+  color: var(--dark-green);
+}
+
+#dark .button {
+  background-color: var(--dark-green);
+  color: var(--title-color-dark);
+}
+
+#dark .button:hover {
+  background-color: var(--dark-green-light);
+}
+
+/* ===================== DARK MODE ==================== */
+
+#light {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+#light .header {
+  background-color: var(--body-color);
+}
+
+#light h1,
+#light h2 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+#light .section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+}
+
+#light .home__social-icon {
+  color: var(--title-color);
+}
+
+#light .home__social-icon:hover {
+  color: var(--title-color-dark);
+}
+
+#light .nav_link {
+  color: var(--title-color);
+}
+
+#light .active-link,
+#light .nav_link:hover {
+  color: var(--title-color-dark);
+}
+
+#light .button {
+  background-color: var(--title-color);
+  color: var(--container-color);
+}
+
+#light .button:hover {
+  background-color: var(--title-color-dark);
+}
+
 /* ===================== Reusable CSS Classes ================= */
 .section {
   padding: 6rem 0 2rem;
 }
 
-.section__title {
+/* .section__title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
-}
+} */
 
 .section__subtitle {
   display: block;
@@ -148,15 +253,9 @@ img {
 /* ===================== Buttons ================= */
 .button {
   display: inline-block;
-  background-color: var(--title-color);
-  color: var(--container-color);
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
-}
-
-.button:hover {
-  background-color: var(--title-color-dark);
 }
 
 .button__icon {

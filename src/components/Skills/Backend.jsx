@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Backend = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="skills__content">
+    <div
+      className="skills__content"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <h3 className="skills__title">Backend Developer</h3>
 
       <div className="skills__box">
