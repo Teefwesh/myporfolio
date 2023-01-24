@@ -17,8 +17,8 @@
 }
 
 #dark .about__box {
-  background-color: var(--dark-green);
-  border: 1px solid rgba(255, 255, 255, 0.621);
+  background-color: var(--dark-body-sub);
+  border: 1px solid rgba(255, 255, 255, 0.132);
 }
 
 #light .about__box {
@@ -38,7 +38,7 @@
 }
 
 #dark .about__icon {
-  color: var(--title-color-dark);
+  color: var(--dark-title-color);
 }
 
 #light .about__icon {
@@ -50,13 +50,17 @@
   font-weight: var(--font-medium);
 }
 
+#dark .about__title {
+  color: var(--dark-green-light);
+}
+
 .about__subtitle {
   font-size: var(--tiny-font-size);
   font-weight: 600;
 }
 
 #dark .about__subtitle {
-  color: var(--title-color);
+  color: var(--dark-green-light);
 }
 
 .about__description {

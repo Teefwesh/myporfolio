@@ -16,11 +16,14 @@
 
   /* ============== Dark Mode Colors ============== */
 
-  --dark-body-color: hsl(var(--hue), var(--sat), 0%);
+  /* --dark-body-color: hsl(var(--hue), var(--sat), 0%); */
+  --dark-body-color: #222222;
+  --dark-body-sub: #121212;
   --dark-title-color: #fff;
   --dark-text-color: #bbb;
-  --dark-green: #3dff00;
+  --dark-green: #066000;
   --dark-green-light: #3bcf0f;
+  --dark-red: #ff2b2b;
 
   /* =========== Font and Topography ============ */
   --body-font: "Poppins", san-sarif;
@@ -89,18 +92,13 @@ textarea {
   font-size: var(--normal-font-size);
 }
 
-/* body {
-  background-color: var(--body-color);
-  color: var(--text-color);
-} */
-
 h3 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
 
 #dark h3 {
-  color: var(--title-color-dark);
+  color: var(--dark-title-color);
 }
 
 ul {
@@ -128,10 +126,6 @@ img {
   color: var(--dark-text-color);
 }
 
-#dark .header {
-  background-color: var(--dark-body-color);
-}
-
 #dark h1,
 #dark h2 {
   color: var(--dark-title-color);
@@ -148,7 +142,7 @@ img {
 }
 
 #dark .home__social-icon:hover {
-  color: var(--dark-green);
+  color: var(--dark-green-light);
 }
 
 #dark .nav_link {
@@ -157,16 +151,18 @@ img {
 
 #dark .active-link,
 #dark .nav_link:hover {
-  color: var(--dark-green);
+  color: var(--dark-green-light);
 }
 
 #dark .button {
   background-color: var(--dark-green);
-  color: var(--title-color-dark);
+  color: var(--dark-title-color);
 }
 
 #dark .button:hover {
   background-color: var(--dark-green-light);
+  color: var(--title-color-dark);
+  transition: 0.3s ease-in-out;
 }
 
 /* ===================== DARK MODE ==================== */

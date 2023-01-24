@@ -1,5 +1,4 @@
 #dark .footer {
-  /* background-color: var(--container-color); */
   border-top: 1px solid var(--dark-green-light);
 }
 
@@ -56,7 +55,7 @@
 }
 
 #dark .footer__social-link:hover {
-  background-color: var(--dark-green);
+  background-color: var(--dark-green-light);
   color: var(--title-color-dark);
 }
 

@@ -10,8 +10,8 @@
 }
 
 #dark .skills__content {
-  background-color: var(--dark-green);
-  border: 1px solid rgba(255, 255, 255, 0.59);
+  background-color: var(--dark-body-sub);
+  border: 1px solid rgba(255, 255, 255, 0.132);
 }
 
 #light .skills__content {
@@ -43,9 +43,13 @@
   column-gap: 0.5rem;
 }
 
-.skills .bx-badge-check {
+.bx-badge-check {
   font-size: 1rem;
   color: var(--title-color);
+}
+
+#dark .bx-badge-check {
+  color: var(--dark-green-light);
 }
 
 .skills__name {

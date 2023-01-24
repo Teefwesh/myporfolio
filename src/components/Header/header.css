@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  /* background-color: var(--body-color); */
+  background-color: var(--dark-body-color);
 }
 
 .nav {
@@ -57,7 +57,8 @@
 
 /* Change background */
 .scroll-header {
-  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -1px 4px rgba(255, 255, 255, 0.238);
+  background-color: var(--dark-green);
 }
 
 /* ============ Breakpoints ============ */
@@ -77,7 +78,6 @@
     bottom: -100%;
     left: 0;
     width: 100%;
-    /* background-color: var(--body-color); */
     background: rgba(255, 255, 255, 0.2);
 
     backdrop-filter: blur(10px);

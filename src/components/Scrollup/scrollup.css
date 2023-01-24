@@ -11,7 +11,7 @@
 }
 
 #dark .scrollup {
-  background-color: #fe1b1b;
+  background-color: var(--dark-red);
 }
 
 .scrollup__icon {
@@ -23,8 +23,8 @@
   color: var(--title-color-dark);
 }
 
-.scrollup:hover {
-  background-color: var(--title-color-dark);
+#dark .scrollup:hover {
+  background-color: red;
 }
 
 /* Show Scroll */

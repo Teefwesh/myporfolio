@@ -26,7 +26,7 @@
 }
 
 #dark .contact__card {
-  background-color: var(--dark-green);
+  background-color: var(--dark-body-sub);
 }
 
 #light .contact__card {
@@ -37,6 +37,10 @@
   font-size: 2rem;
   color: var(--title-color);
   margin-bottom: var(--mb-0-25);
+}
+
+#dark .contact__card-icon {
+  color: var(--dark-green-light);
 }
 
 .contact__card-title,
@@ -54,7 +58,7 @@
 }
 
 #dark .contact__card-data {
-  color: var(--title-color);
+  color: var(--dark-text-color);
   font-weight: 600;
 }
 
@@ -68,7 +72,7 @@
 }
 
 #dark .contact__button {
-  color: var(--title-color);
+  color: var(--dark-text-color);
 }
 
 #light .contact__button {
@@ -112,7 +116,7 @@
 }
 
 #dark .contact__form-input {
-  border: 2px solid #3dff00;
+  border: 2px solid var(--dark-green-light);
   color: var(--dark-title-color);
 }
 
@@ -132,7 +136,7 @@
 }
 
 #dark .contact__form-tag {
-  background-color: var(--title-color-dark);
+  background-color: var(--dark-body-color);
   color: var(--dark-title-color);
 }
 
