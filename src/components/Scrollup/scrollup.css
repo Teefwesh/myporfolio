@@ -29,7 +29,7 @@
 
 /* Show Scroll */
 .show-scroll {
-  bottom: 3rem;
+  bottom: 7rem;
 }
 
 /* ===================== Breakpoints ================= */
@@ -47,7 +47,7 @@
 /* For medium devices */
 @media screen and (max-width: 768px) {
   .show-scroll {
-    bottom: 4rem;
+    bottom: 7rem;
   }
 }
 

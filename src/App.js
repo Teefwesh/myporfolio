@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 
 import "./App.css";
 import About from "./components/About/About";
@@ -21,6 +22,10 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className="App" id={theme}>
+        <TawkMessengerReact
+          propertyId="63d99aa3c2f1ac1e2030af88"
+          widgetId="1go5084m0"
+        />
         <Header theme={theme} toggleTheme={toggleTheme} />
 
         <main className="main">
